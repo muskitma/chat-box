@@ -1,3 +1,4 @@
+
 console.log('Hello World!');
 const sendButton = document.getElementById("sendButton");
 const chatInput = document.getElementById('chatInput');
@@ -9,7 +10,7 @@ async function displayMessage(message, isUser) {
     msgElem.className = `chat-message ${isUser ? 'user-message' : 'assistant-message'}`;
     chatbox.appendChild(msgElem);
     chatbox.scrollTop = chatbox.scrollHeight; // Scroll to the bottom
-    
+
     // For assistant messages, add a slight delay before displaying
     if (!isUser) {
         msgElem.style.opacity = 0; // Start with opacity 0
@@ -46,7 +47,7 @@ sendButton.addEventListener('click', async () => {
 
     const apiUrl = message.startsWith('/image') ? 
         'https://backend.buildpicoapps.com/aero/run/image-generation-api?pk=v1-Z0FBQUFBQm5HUEtMSjJkakVjcF9IQ0M0VFhRQ0FmSnNDSHNYTlJSblE0UXo1Q3RBcjFPcl9YYy1OZUhteDZWekxHdWRLM1M1alNZTkJMWEhNOWd4S1NPSDBTWC12M0U2UGc9PQ==' : 
-        'https://backend.buildpicoapps.com/aero/run/llm-api?pk=v1-Z0FBQUFBQm5HUEtMSjJkakVjcF9IQ0M0VFhRQ0FmSnNDSHNYTlJSblE0UXo1Q3RBcjFPcl9YYy1OZUhteDZWekxHdWRLM1M1alNZTkJMWEhNOWd4S1NPSDBTWC12M0U2UGc9PQ==';
+        'https://backend.buildpicoapps.com/aero/run/llm-api?pk=v1-Z0FBQUFBQm5HUEtMSjJkakVjcF9IQ0M0VFhRQ0FmSnNDSHNYTlJSblE0UXo1Q3RBcjFPcl9YYy1OZUhteDZWekxHdWRLM1M1alNZTkJMWEhNOWd4S1NPSDBTWC12M0U2UGc9PQ==' ;
 
     try {
         const data = await callApi(apiUrl, message);
@@ -57,6 +58,15 @@ sendButton.addEventListener('click', async () => {
         } 
     } catch (error) {
         console.error('Error:', error);
-displayMessage('An error occurred. Please try again.', false);
-}
+        displayMessage('An error occurred. Please try again.', false);
+    }
 });
+
+// Add the event listener for "Enter" key press
+chatInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent default behavior of form submission
+        sendButton.click(); // Trigger the send button click to send the message
+    }
+});
+

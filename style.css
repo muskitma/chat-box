@@ -1,14 +1,21 @@
 body {
     font-size: 15pt;
+    background-color: aqua;
+    
+
+    
+   
+    
 }
 body {
     margin: 0;
     font-family: Roboto, sans-serif;
-    background-color: #FAFAFA; /* Light background */
+    background-image: url(.png);
+    background-color: #e2c5c5; /* Light background */
     color: #212121;
 }
 .header {
-    background-color: #6200EA; /* Purple 500 */
+    background-color: #181024; /* Purple 500 */
     color: white;
     padding: 16px;
     text-align: center;
@@ -20,10 +27,14 @@ body {
     height: 100vh;
     max-width: 400px;
     margin: auto;
-    border: 1px solid #E0E0E0;
-    border-radius: 8px;
+    border: 6px solid #4a4141;
+    border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    background-color: white;
+    background-image: url(b2.jpg);
+    background-color: rgb(126, 23, 23);
+    background-size: no-cover;
+    background-position: center;
+
 }
 .chatbox {
     flex: 1;
@@ -54,8 +65,8 @@ body {
 }
 .input-area {
     padding: 10px;
-    border-top: 1px solid #E0E0E0;
-    background-color: #F5F5F5; /* Slightly darker grey */
+    /* border-top: 1px solid #E0E0E0; */
+    /* background-color: #F5F5F5; Slightly darker grey */
     display: flex;
     align-items: center;
 }
@@ -69,13 +80,13 @@ body {
 }
 .input-area input:focus {
     outline: none;
-    border-color: #6200EA; /* Purple 500 */
+    border-color: #0037ea; /* Purple 500 */
 }
 .input-area button {
     padding: 10px 15px;
     border: none;
     border-radius: 20px;
-    background-color: #6200EA; /* Purple 500 */
+    background-color: #1700ea; /* Purple 500 */
     color: white;
     cursor: pointer;
     display: flex;
