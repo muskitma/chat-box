@@ -17,7 +17,9 @@
     padding: 16px;
     font-size: 24px;
 }
-
+header::after{
+    background-color: rgb(9, 6, 6);
+}
 
 /* Container styling */
 .container {
@@ -83,23 +85,11 @@ themeToggle.addEventListener('click', () => {
         document.body.style.backgroundColor = '#121212';
         document.body.style.color = '#ffffff';
         themeToggle.replaceChildren(moonIcon);
-        if (isDarkMode) {
-        document.header.style.backgroundColor = '#121212';
-        document.header.style.color = '#ffffff';
-        themeToggle.replaceChildren(moonIcon);
-        }
-        else {
-        document.header.style.backgroundColor = '#f4f4f4';
-        document.header.style.color = '#000000';
-        themeToggle.replaceChildren(sunIcon);
-    }
-        
     } else {
         document.body.style.backgroundColor = '#f4f4f4';
         document.body.style.color = '#000000';
         themeToggle.replaceChildren(sunIcon);
     }
-    
 
 
 });
