@@ -1,22 +1,12 @@
-body {
-    font-size: 15pt;
-    background-color: aqua;
-    
 
-    
-   
-    
-}
 body {
     margin: 0;
     font-family: Roboto, sans-serif;
     background-image: url(.png);
-    background-color: #e2c5c5; /* Light background */
-    color: #212121;
+  
 }
 .header {
-    background-color: #181024; /* Purple 500 */
-    color: white;
+ 
     padding: 16px;
     text-align: center;
     font-size: 24px;
